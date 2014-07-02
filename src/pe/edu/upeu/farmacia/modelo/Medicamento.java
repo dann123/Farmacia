@@ -6,6 +6,9 @@
 
 package pe.edu.upeu.farmacia.modelo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author Nestor
@@ -67,5 +70,14 @@ public class Medicamento {
         this.Precio = Precio;
     }
     
+    public static Medicamento loadMedicamento(ResultSet rs) throws SQLException{
+    Medicamento t = new Medicamento();
+    t.setIdMedicamento(rs.getInt("idMedicamento"));
+    t.setNombre(rs.getString("Nombre"));
+    t.setDescripcion(rs.getString("Descripcion"));
+    t.setStock(rs.getInt("Stock"));
+    t.setPrecio(rs.getDouble("Precio"));
+    return t;
     
+    }
 }

@@ -6,6 +6,9 @@
 
 package pe.edu.upeu.farmacia.modelo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author alum.fial7
@@ -46,5 +49,13 @@ public class Marca {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+   public static Marca loadDistrito(ResultSet rs) throws SQLException{
+    Marca m = new Marca();
+    m.setIdMarca(rs.getInt("idMarca"));
+    m.setNombre(rs.getString("Nombre"));
+    m.setEstado(rs.getString("Estado"));
     
+    return m;
+    
+    }  
 }

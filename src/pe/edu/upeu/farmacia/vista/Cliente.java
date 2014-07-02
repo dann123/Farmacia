@@ -18,13 +18,13 @@ import javax.swing.JOptionPane;
 import pe.edu.upeu.farmacia.config.Conexion;
 
 
-public class Clientes extends javax.swing.JPanel {        
+public class Cliente extends javax.swing.JPanel {        
    Conexion cn;
    CallableStatement cts;
    ResultSet r;
    Conexion conectar=new Conexion();
    
-    public Clientes() {
+    public Cliente() {
         initComponents();    
     initComponents();
           cn=(Conexion) conectar.conex();
@@ -335,7 +335,7 @@ public class Clientes extends javax.swing.JPanel {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -389,7 +389,7 @@ public class Clientes extends javax.swing.JPanel {
           
            
         } catch (SQLException | HeadlessException e) {
-            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, e);
         }
         
     }//GEN-LAST:event_btnAgregarActionPerformed

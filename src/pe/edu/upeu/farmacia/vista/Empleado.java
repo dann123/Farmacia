@@ -372,7 +372,7 @@ public class Empleado extends javax.swing.JPanel {
           BOTONES();
          DESABILITAR();
         } catch (SQLException | HeadlessException e) {
-            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, e);
         }
                   
 

@@ -19,6 +19,10 @@ import pe.edu.upeu.farmacia.config.Conexion;
 
 
 public class Cliente extends javax.swing.JPanel {        
+
+    public static Cliente loadCliente(ResultSet rs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    Conexion cn;
    CallableStatement cts;
    ResultSet r;

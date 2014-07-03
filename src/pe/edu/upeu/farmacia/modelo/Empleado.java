@@ -6,6 +6,9 @@
 
 package pe.edu.upeu.farmacia.modelo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author alum.fial7
@@ -126,5 +129,20 @@ public class Empleado {
     public void setFechaNaci(int FechaNaci) {
         this.FechaNaci = FechaNaci;
     }
+     public static Ventas loadVentas(ResultSet rs) throws SQLException{
+    Ventas v = new Ventas();
+    v.setIdVentas(rs.getInt("idVentas"));
+    v.setEstado(rs.getString("estado"));
+    v.setFecha(rs.getString("Fecha"));
+    v.setNroVoletas(rs.getInt("NroVoletas"));
+    v.setMontoTotal(rs.getDouble("MontoTotal"));
+    v.setIGV(rs.getDouble("IGV"));
+    v.setFactura(rs.getInt("Factura"));
+    v.setBoleta(rs.getInt("Boleta"));
+    v.setSubTotal(rs.getDouble("SubTotal"));
     
+    
+    return v;
+    
+    }
 }

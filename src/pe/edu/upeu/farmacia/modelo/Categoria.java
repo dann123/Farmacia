@@ -6,11 +6,16 @@
 
 package pe.edu.upeu.farmacia.modelo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author alum.fial7
  */
 public class Categoria {
+
+    
     private int idCategoria;
     private String Nombre;
     private String Estado;
@@ -46,5 +51,15 @@ public class Categoria {
     public void setEstado(String Estado) {
         this.Estado = Estado;
     }
+    public static Categoria loadCategoria(ResultSet rs) throws SQLException{
+    Categoria ca = new Categoria();
+    ca.setIdCategoria(rs.getInt("idCategoria"));
+    ca.setNombre(rs.getString("Nombre"));
+    ca.setEstado(rs.getString("Estado"));
     
+    
+    
+    return ca;
+    
+    } 
 }

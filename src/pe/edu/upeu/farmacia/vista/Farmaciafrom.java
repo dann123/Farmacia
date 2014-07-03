@@ -9,7 +9,10 @@ package pe.edu.upeu.farmacia.vista;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pe.edu.upeu.farmacia.config.Conexion;
 
@@ -45,7 +48,7 @@ this.lblHora.setText(hora);
     private void initComponents() {
 
         jMenu3 = new javax.swing.JMenu();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDesktopPane2 = new javax.swing.JDesktopPane();
         lblFecha = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -54,32 +57,32 @@ this.lblHora.setText(hora);
         jMenu1 = new javax.swing.JMenu();
         CerrarcesionMenuItem1 = new javax.swing.JMenuItem();
         SalirMenuItem5 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        Mantenimiento = new javax.swing.JMenu();
+        ManEmpleados = new javax.swing.JMenuItem();
+        ManMedicamentos = new javax.swing.JMenuItem();
+        ManClientes = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        MoFactura = new javax.swing.JMenuItem();
+        MoBoleta = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        ReClientes = new javax.swing.JMenuItem();
+        RepEmpleado = new javax.swing.JMenuItem();
+        RepMedicamento = new javax.swing.JMenuItem();
+        RepFactura = new javax.swing.JMenuItem();
+        RepBoleta = new javax.swing.JMenuItem();
 
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
+        jDesktopPane2.setLayout(jDesktopPane2Layout);
+        jDesktopPane2Layout.setHorizontalGroup(
+            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDesktopPane2Layout.setVerticalGroup(
+            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 327, Short.MAX_VALUE)
         );
 
@@ -111,55 +114,96 @@ this.lblHora.setText(hora);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Mantenimiento");
+        Mantenimiento.setText("Mantenimiento");
 
-        jMenuItem2.setText("Empleados ");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        ManEmpleados.setText("Empleados ");
+        ManEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                ManEmpleadosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        Mantenimiento.add(ManEmpleados);
 
-        jMenuItem4.setText("Productos");
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem3.setText("Clintes");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        ManMedicamentos.setText("Productos");
+        ManMedicamentos.setActionCommand("");
+        ManMedicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                ManMedicamentosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        Mantenimiento.add(ManMedicamentos);
 
-        jMenuBar1.add(jMenu2);
+        ManClientes.setText("Clintes");
+        ManClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManClientesActionPerformed(evt);
+            }
+        });
+        Mantenimiento.add(ManClientes);
+
+        jMenuBar1.add(Mantenimiento);
 
         jMenu4.setText("Moviento");
 
-        jMenuItem1.setText("Factura");
-        jMenu4.add(jMenuItem1);
+        MoFactura.setText("Factura");
+        MoFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoFacturaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(MoFactura);
 
-        jMenuItem7.setText("Boleta");
-        jMenu4.add(jMenuItem7);
+        MoBoleta.setText("Boleta");
+        MoBoleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoBoletaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(MoBoleta);
 
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Reportes");
 
-        jMenuItem5.setText("Clientes");
-        jMenu5.add(jMenuItem5);
+        ReClientes.setText("Clientes");
+        ReClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReClientesActionPerformed(evt);
+            }
+        });
+        jMenu5.add(ReClientes);
 
-        jMenuItem8.setText("Empleado");
-        jMenu5.add(jMenuItem8);
+        RepEmpleado.setText("Empleado");
+        RepEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepEmpleadoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(RepEmpleado);
 
-        jMenuItem9.setText("Medicamentos");
-        jMenu5.add(jMenuItem9);
+        RepMedicamento.setText("Medicamentos");
+        RepMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepMedicamentoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(RepMedicamento);
 
-        jMenuItem10.setText("Factura");
-        jMenu5.add(jMenuItem10);
+        RepFactura.setText("Factura");
+        RepFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepFacturaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(RepFactura);
 
-        jMenuItem11.setText("Boleta");
-        jMenu5.add(jMenuItem11);
+        RepBoleta.setText("Boleta");
+        RepBoleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RepBoletaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(RepBoleta);
 
         jMenuBar1.add(jMenu5);
 
@@ -170,7 +214,7 @@ this.lblHora.setText(hora);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1)
+                .addComponent(jDesktopPane2)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 241, Short.MAX_VALUE)
@@ -186,7 +230,7 @@ this.lblHora.setText(hora);
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1)
+                .addComponent(jDesktopPane2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
@@ -198,9 +242,20 @@ this.lblHora.setText(hora);
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void ManEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManEmpleadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        
+          ConsultasEmpleados ce;
+        try {
+            ce = new ConsultasEmpleados();
+            jDesktopPane2.add(ce);
+            ce.setLocation(50, 5);
+        ce.show();
+        ce.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(Farmaciafrom.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ManEmpleadosActionPerformed
 
     private void SalirMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuItem5ActionPerformed
         // TODO add your handling code here:
@@ -222,11 +277,72 @@ System.exit(0);
          this.hide();
     }//GEN-LAST:event_CerrarcesionMenuItem1ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void ManClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManClientesActionPerformed
+        // TODO add your handling code here:
+      try{
+        Cliente c =new Cliente();
+        jDesktopPane2.add(c);
+        c.show();
+        c.setLocation(50, 5);
+       }catch(Exception e){}  
+        
+    }//GEN-LAST:event_ManClientesActionPerformed
+
+    private void ManMedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManMedicamentosActionPerformed
+        // TODO add your handling code here:
+           
+
+    }//GEN-LAST:event_ManMedicamentosActionPerformed
+
+    private void ReClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReClientesActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "conecion exitosa");
+    }//GEN-LAST:event_ReClientesActionPerformed
+
+    private void MoFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoFacturaActionPerformed
+        // TODO add your handling code here:
+        try{
+        Factura f=new Factura();
+        jDesktopPane2.add(f);
+       f.setLocation(50, 5); 
+        f.show();
+        f.setVisible(true);
+       }catch(Exception e){}
+    }//GEN-LAST:event_MoFacturaActionPerformed
+
+    private void MoBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoBoletaActionPerformed
+        // TODO add your handling code here:
+        try{
+        Boleta b=new Boleta();
+        jDesktopPane2.add(b);
+        b.setLocation(50, 5);
+        b.show();
+        b.setVisible(true);
+        }catch (Exception e){JOptionPane.showMessageDialog(this,"error de ejecucion"+e.getMessage());
+        }
+    }//GEN-LAST:event_MoBoletaActionPerformed
+
+    private void RepEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepEmpleadoActionPerformed
         // TODO add your handling code here:
         
-        
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        JOptionPane.showMessageDialog(this, "conecion exitosa");
+    }//GEN-LAST:event_RepEmpleadoActionPerformed
+
+    private void RepMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepMedicamentoActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "conecion exitosa");
+    }//GEN-LAST:event_RepMedicamentoActionPerformed
+
+    private void RepFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepFacturaActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "conecion exitosa");
+    }//GEN-LAST:event_RepFacturaActionPerformed
+
+    private void RepBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepBoletaActionPerformed
+
+JOptionPane.showMessageDialog(this, "conecion exitosa");        
+// TODO add your handling code here:
+    }//GEN-LAST:event_RepBoletaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,26 +381,26 @@ System.exit(0);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem CerrarcesionMenuItem1;
+    private javax.swing.JMenuItem ManClientes;
+    private javax.swing.JMenuItem ManEmpleados;
+    private javax.swing.JMenuItem ManMedicamentos;
+    private javax.swing.JMenu Mantenimiento;
+    private javax.swing.JMenuItem MoBoleta;
+    private javax.swing.JMenuItem MoFactura;
+    private javax.swing.JMenuItem ReClientes;
+    private javax.swing.JMenuItem RepBoleta;
+    private javax.swing.JMenuItem RepEmpleado;
+    private javax.swing.JMenuItem RepFactura;
+    private javax.swing.JMenuItem RepMedicamento;
     private javax.swing.JMenuItem SalirMenuItem5;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblHora;
     // End of variables declaration//GEN-END:variables

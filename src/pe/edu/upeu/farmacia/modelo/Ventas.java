@@ -6,13 +6,16 @@
 
 package pe.edu.upeu.farmacia.modelo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author alum.fial7
  */
 public class Ventas {
-    private int idVentas;
-    private String estado;
+    private int IdVentas;
+    private String Estado;
     private String Fecha;
     private int NroVoletas;
     private Double MontoTotal;
@@ -25,7 +28,7 @@ public class Ventas {
     }
 
     public Ventas(String estado, String Fecha, int NroVoletas, Double MontoTotal, Double IGV, int Factura, int Boleta, Double SubTotal) {
-        this.estado = estado;
+        this.Estado = estado;
         this.Fecha = Fecha;
         this.NroVoletas = NroVoletas;
         this.MontoTotal = MontoTotal;
@@ -36,19 +39,19 @@ public class Ventas {
     }
 
     public int getIdVentas() {
-        return idVentas;
+        return IdVentas;
     }
 
     public void setIdVentas(int idVentas) {
-        this.idVentas = idVentas;
+        this.IdVentas = idVentas;
     }
 
     public String getEstado() {
-        return estado;
+        return Estado;
     }
 
     public void setEstado(String estado) {
-        this.estado = estado;
+        this.Estado = estado;
     }
 
     public String getFecha() {
@@ -106,6 +109,21 @@ public class Ventas {
     public void setSubTotal(Double SubTotal) {
         this.SubTotal = SubTotal;
     }
+     public static Ventas loadVentas(ResultSet rs) throws SQLException{
+    Ventas v = new Ventas();
+    v.setIdVentas(rs.getInt("idVentas"));
+    v.setEstado(rs.getString("estado"));
+    v.setFecha(rs.getString("Fecha"));
+    v.setNroVoletas(rs.getInt("NroVoletas"));
+    v.setMontoTotal(rs.getDouble("MontoTotal"));
+    v.setIGV(rs.getDouble("IGV"));
+    v.setFactura(rs.getInt("Factura"));
+    v.setBoleta(rs.getInt("Boleta"));
+    v.setSubTotal(rs.getDouble("SubTotal"));
     
+    
+    return v;
+    
+    }
          
 }

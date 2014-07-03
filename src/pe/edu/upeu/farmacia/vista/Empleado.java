@@ -22,6 +22,10 @@ import pe.edu.upeu.farmacia.config.Conexion;
  */
 public class Empleado extends javax.swing.JPanel {
 
+    public static Empleado loadEmpleado(ResultSet rs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * Creates new form Empleados
      */

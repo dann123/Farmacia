@@ -3,6 +3,8 @@ package pe.edu.upeu.farmacia.vista;
 
 import java.sql.*;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 import pe.edu.upeu.farmacia.config.Conexion;
@@ -27,7 +29,7 @@ public class Boleta extends javax.swing.JInternalFrame {
        r=cts.executeQuery();
        if (r.next())
         
-          jTextField1.setText(r.getString(1));
+          txtNrovoleta.setText(r.getString(1));
             }catch (Exception e){} 
 
     }
@@ -44,7 +46,7 @@ public class Boleta extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtTotalPagar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jta_detalleboleta = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -56,10 +58,10 @@ public class Boleta extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnMedicamentos = new javax.swing.JButton();
+        btnCalcularOp = new javax.swing.JButton();
+        btmEliminarMedicamento = new javax.swing.JButton();
+        btnRealizarVenta = new javax.swing.JButton();
         jlb_senores = new javax.swing.JLabel();
         jlb_dni = new javax.swing.JLabel();
         jlb_Fecha = new javax.swing.JLabel();
@@ -68,7 +70,7 @@ public class Boleta extends javax.swing.JInternalFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNrovoleta = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -80,7 +82,7 @@ public class Boleta extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Total a Pagra:");
 
-        jTextField6.setEditable(false);
+        txtTotalPagar.setEditable(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -90,7 +92,7 @@ public class Boleta extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
         jPanel4Layout.setVerticalGroup(
@@ -99,7 +101,7 @@ public class Boleta extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -174,31 +176,31 @@ public class Boleta extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton2.setText("ARTICULOS");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnMedicamentos.setText("MEDICAMENTOS");
+        btnMedicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnMedicamentosActionPerformed(evt);
             }
         });
 
-        jButton3.setText("CALCULAR OPERACION");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcularOp.setText("CALCULAR OPERACION");
+        btnCalcularOp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnCalcularOpActionPerformed(evt);
             }
         });
 
-        jButton4.setText("ELIMINAR ARTICULO");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btmEliminarMedicamento.setText("ELIMINAR MEDICAMENTO");
+        btmEliminarMedicamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btmEliminarMedicamentoActionPerformed(evt);
             }
         });
 
-        jButton5.setText("REALIZAE VENTA");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnRealizarVenta.setText("REALIZAR VENTA");
+        btnRealizarVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnRealizarVentaActionPerformed(evt);
             }
         });
 
@@ -209,23 +211,23 @@ public class Boleta extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRealizarVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmEliminarMedicamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCalcularOp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMedicamentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMedicamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCalcularOp, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btmEliminarMedicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRealizarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -252,7 +254,7 @@ public class Boleta extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("N°:");
 
-        jTextField1.setEnabled(false);
+        txtNrovoleta.setEnabled(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -265,7 +267,7 @@ public class Boleta extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNrovoleta, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(67, 67, 67))
         );
         jPanel5Layout.setVerticalGroup(
@@ -276,7 +278,7 @@ public class Boleta extends javax.swing.JInternalFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNrovoleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -381,22 +383,21 @@ public class Boleta extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-       
-       
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnMedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicamentosActionPerformed
+        // TODO add your handling code here:                     
+     
+    }//GEN-LAST:event_btnMedicamentosActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnRealizarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarVentaActionPerformed
         // TODO add your handling code here:
         agregarBoletos();
         agregarDETALLEBoletos();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnRealizarVentaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnCalcularOpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularOpActionPerformed
         // TODO add your handling code here:
          double suma=0.0;
          double subtot=0.0;
@@ -410,13 +411,13 @@ public class Boleta extends javax.swing.JInternalFrame {
              subtot+=suma;    
            
             jta_detalleboleta.setValueAt(suma, i, 4);
-             jTextField6.setText(""+subtot);
+             txtTotalPagar.setText(""+subtot);
                         
              
          }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnCalcularOpActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btmEliminarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmEliminarMedicamentoActionPerformed
         // TODO add your handling code here:
         // TODO add your handling code here:
          javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) jta_detalleboleta.getModel();
@@ -431,12 +432,12 @@ public class Boleta extends javax.swing.JInternalFrame {
         modelo.removeRow(fila_select);
         }
 
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btmEliminarMedicamentoActionPerformed
 public void agregarBoletos(){
-        String nBO=jTextField1.getText();
+        String nBO=txtNrovoleta.getText();
         String fec=jlb_Fecha.getText();
         String codcli=jlb_codclie.getText();
-        String tot=jTextField6.getText().toString();
+        String tot=txtTotalPagar.getText().toString();
         
         try {
             cts=cn.prepareCall("{call InsertaBOLETOS(?,?,?,?)}");
@@ -455,7 +456,7 @@ public void agregarBoletos(){
 }
 public void agregarDETALLEBoletos(){
      for(int i=0;i<jta_detalleboleta.getRowCount();i++){
-         String nbol=jTextField1.getText();
+         String nbol=txtNrovoleta.getText();
         String codpro=jta_detalleboleta.getValueAt(i,0).toString();
         String prod=jta_detalleboleta.getValueAt(i,1).toString();
         String cant=jta_detalleboleta.getValueAt(i,2).toString();
@@ -481,11 +482,11 @@ public void agregarDETALLEBoletos(){
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmEliminarMedicamento;
+    private javax.swing.JButton btnCalcularOp;
+    private javax.swing.JButton btnMedicamentos;
+    private javax.swing.JButton btnRealizarVenta;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -501,13 +502,13 @@ public void agregarDETALLEBoletos(){
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField6;
     public static javax.swing.JLabel jlb_Fecha;
     public static javax.swing.JLabel jlb_codclie;
     public static javax.swing.JLabel jlb_direccion;
     public static javax.swing.JLabel jlb_dni;
     public static javax.swing.JLabel jlb_senores;
     public static javax.swing.JTable jta_detalleboleta;
+    private javax.swing.JTextField txtNrovoleta;
+    private javax.swing.JTextField txtTotalPagar;
     // End of variables declaration//GEN-END:variables
 }

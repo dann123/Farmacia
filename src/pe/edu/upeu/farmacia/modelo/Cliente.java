@@ -6,6 +6,9 @@
 
 package pe.edu.upeu.farmacia.modelo;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author alum.fial7
@@ -106,5 +109,20 @@ public class Cliente {
     public void setFechaNac(int FechaNac) {
         this.FechaNac = FechaNac;
     }
+    public static Cliente loadCliente(ResultSet rs) throws SQLException{
+    Cliente c= new Cliente();
+    c.setIdCliente(rs.getInt("idCliente"));
+    c.setNombre(rs.getString("Nombre"));
+     c.setApellidoPat(rs.getString("Nombre"));
+    c.setApellidoMat(rs.getString("Estado"));         
+    c.setDNI(rs.getInt("Estado"));
+    c.setTelefono(rs.getInt("Nombre"));
+    c.setDireccion(rs.getString("Estado"));
+    c.setSexo(rs.getString("idMarca"));
+     c.setFechaNac(rs.getInt("idMarca"));
+   
     
+    return c;
+    
+    } 
 }

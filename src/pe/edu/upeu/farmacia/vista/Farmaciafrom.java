@@ -332,7 +332,7 @@ System.exit(0);
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "conecion exitosa");
     }//GEN-LAST:event_RepMedicamentoActionPerformed
-
+   
     private void RepFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RepFacturaActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "conecion exitosa");

@@ -12,7 +12,7 @@ import pe.edu.upeu.farmacia.config.Conexion;
 
 /**
  *
- * @author avalos
+ * @author HuBel
  */
 public class BuscarArticulosB extends javax.swing.JInternalFrame {
 

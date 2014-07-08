@@ -39,11 +39,11 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jButton4" linkSize="1" alignment="0" pref="157" max="32767" attributes="0"/>
-                              <Component id="jButton5" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton3" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnEliminararticulo" linkSize="1" alignment="0" pref="157" max="32767" attributes="0"/>
+                              <Component id="btnRealizarventa" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnSalir" linkSize="1" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jButton6" linkSize="1" min="-2" pref="157" max="-2" attributes="0"/>
+                          <Component id="btnOperacion" linkSize="1" min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -65,16 +65,16 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="jLabel18" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="lblDNI" min="-2" pref="150" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="JLB_codCliente" min="-2" pref="104" max="-2" attributes="0"/>
+                                              <Component id="jblcodCliente" min="-2" pref="104" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jLabel16" min="-2" pref="267" max="-2" attributes="0"/>
+                                              <Component id="lblSeñor" min="-2" pref="267" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnBuscarseñor" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -82,12 +82,12 @@
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jlb_ruc" min="-2" pref="105" max="-2" attributes="0"/>
+                                              <Component id="jlbRUC" min="-2" pref="105" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jlb_fecha" min="-2" pref="79" max="-2" attributes="0"/>
+                                              <Component id="jlbfecha" min="-2" pref="79" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -96,7 +96,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButton2" min="-2" pref="128" max="-2" attributes="0"/>
+                                      <Component id="btnBuscar" min="-2" pref="128" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -119,29 +119,29 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel16" alignment="1" min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="jlb_ruc" alignment="1" min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblSeñor" alignment="1" min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jlbRUC" alignment="1" min="-2" pref="19" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBuscarseñor" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="JLB_codCliente" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="jblcodCliente" min="-2" pref="19" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jLabel18" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="lblDNI" alignment="0" min="-2" pref="19" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlb_fecha" min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="jlbfecha" min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -151,7 +151,7 @@
                           </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -161,13 +161,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jButton6" linkSize="2" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="btnOperacion" linkSize="2" min="-2" pref="37" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btnEliminararticulo" linkSize="2" min="-2" pref="41" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton5" linkSize="2" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="btnRealizarventa" linkSize="2" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton3" linkSize="2" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnSalir" linkSize="2" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -235,7 +235,7 @@
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="jLabel11" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="2" min="-2" pref="123" max="-2" attributes="0"/>
+                      <Component id="txtNroFactura" alignment="2" min="-2" pref="123" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="59" max="32767" attributes="0"/>
               </Group>
@@ -250,7 +250,7 @@
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNroFactura" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="44" max="32767" attributes="0"/>
@@ -274,7 +274,7 @@
             <Property name="text" type="java.lang.String" value="N&#xb0;:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txtNroFactura">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -450,7 +450,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jtableDetalle">
+            <Component class="javax.swing.JTable" name="tblDetalle">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -494,7 +494,7 @@
         <Property name="text" type="java.lang.String" value="Se&#xf1;or(es):"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnBuscarse&#xf1;or">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/16 (Search).jpg"/>
@@ -502,7 +502,7 @@
         <Property name="text" type="java.lang.String" value="..."/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarse&#xf1;orActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -521,7 +521,7 @@
         <Property name="text" type="java.lang.String" value="R.U.C:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel16">
+    <Component class="javax.swing.JLabel" name="lblSe&#xf1;or">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
@@ -536,7 +536,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jlb_ruc">
+    <Component class="javax.swing.JLabel" name="jlbRUC">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
@@ -551,7 +551,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel18">
+    <Component class="javax.swing.JLabel" name="lblDNI">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
@@ -566,7 +566,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="JLB_codCliente">
+    <Component class="javax.swing.JLabel" name="jblcodCliente">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
@@ -596,7 +596,7 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jlb_fecha">
+    <Component class="javax.swing.JLabel" name="jlbfecha">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
@@ -616,7 +616,7 @@
         <Property name="text" type="java.lang.String" value="Articulo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnBuscar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/16 (Search).jpg"/>
@@ -624,10 +624,10 @@
         <Property name="text" type="java.lang.String" value="BUSCAR ..."/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btnRealizarventa">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/16 (Save).jpg"/>
@@ -635,10 +635,10 @@
         <Property name="text" type="java.lang.String" value="REALIZAR VENTA"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRealizarventaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="btnEliminararticulo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/16 (User delete).jpg"/>
@@ -646,10 +646,10 @@
         <Property name="text" type="java.lang.String" value="ELIMINAR ARTICULO"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminararticuloActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnSalir">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/Imagenes/16 (Delete).jpg"/>
@@ -657,15 +657,15 @@
         <Property name="text" type="java.lang.String" value="SALIR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="btnOperacion">
       <Properties>
         <Property name="text" type="java.lang.String" value="CALCULAR OPERACION"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOperacionActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

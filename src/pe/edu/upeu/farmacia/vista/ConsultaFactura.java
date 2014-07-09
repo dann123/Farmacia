@@ -8,6 +8,7 @@ import java.awt.HeadlessException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pe.edu.upeu.farmacia.config.Conexion;
@@ -28,7 +29,13 @@ public class ConsultaFactura extends javax.swing.JInternalFrame {
     public ConsultaFactura() {
         initComponents();
          jTextField1.setEnabled(false);
-         cn=conectar.conex();
+       try {
+           cn=conectar.GetConexion();
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(ConsultaFactura.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (SQLException ex) {
+           Logger.getLogger(ConsultaFactura.class.getName()).log(Level.SEVERE, null, ex);
+       }
          cargar();
     }
     

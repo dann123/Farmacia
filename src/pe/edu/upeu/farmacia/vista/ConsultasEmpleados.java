@@ -5,6 +5,8 @@
 package pe.edu.upeu.farmacia.vista;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import pe.edu.upeu.farmacia.config.Conexion;
 
@@ -23,7 +25,11 @@ public final class ConsultasEmpleados extends javax.swing.JInternalFrame {
         jComboBox1.addItem("Seleccione...");
         jComboBox1.addItem("M");
         jComboBox1.addItem("F");
-        cn=conectar.conex();
+        try {
+            cn=conectar.GetConexion();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ConsultasEmpleados.class.getName()).log(Level.SEVERE, null, ex);
+        }
                jTextField1.setEnabled(false);
          cargar();
     }

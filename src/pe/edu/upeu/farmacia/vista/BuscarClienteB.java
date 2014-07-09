@@ -1,6 +1,8 @@
 package pe.edu.upeu.farmacia.vista;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.table.DefaultTableModel;
 import pe.edu.upeu.farmacia.config.Conexion;
@@ -16,8 +18,13 @@ Conexion conectar=new Conexion();
    ResultSet r;
     public BuscarClienteB() {
         initComponents();
-         
-            cn=conectar.conex();
+    try {
+        cn=conectar.GetConexion();
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(BuscarClienteB.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SQLException ex) {
+        Logger.getLogger(BuscarClienteB.class.getName()).log(Level.SEVERE, null, ex);
+    }
              cargar();
     }
  private void SelecionaCLiente(){

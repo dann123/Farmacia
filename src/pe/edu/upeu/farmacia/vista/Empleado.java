@@ -38,7 +38,13 @@ public class Empleado extends javax.swing.JPanel {
         initComponents();
         BOTONES();
         DESABILITAR();
-       cn=conectar.conex();
+        try {
+            cn=conectar.GetConexion();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
    
 

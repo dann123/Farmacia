@@ -28,7 +28,13 @@ public class ConsultaBoleto extends javax.swing.JInternalFrame {
     public ConsultaBoleto() {
         initComponents();
         jTextField1.setEnabled(false);
-           cn=conectar.conex();
+        try {
+            cn=conectar.GetConexion();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ConsultaBoleto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultaBoleto.class.getName()).log(Level.SEVERE, null, ex);
+        }
           cargar();
     }
     

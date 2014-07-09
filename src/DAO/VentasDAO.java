@@ -25,10 +25,10 @@ public class VentasDAO {
     private Statement st;
     private ResultSet rs;
     private String sql;
-    public ArrayList<Ventas> ListarVentas(){
+    public ArrayList<Ventas> ListarVentas() throws ClassNotFoundException{
         ArrayList<Ventas> lista = new ArrayList();
         try {            
-            cx = Conexion.getConexion();
+            cx = Conexion.GetConexion();
             sql ="SELECT * FROM distrito";
             st = cx.createStatement();
             rs=st.executeQuery(sql);

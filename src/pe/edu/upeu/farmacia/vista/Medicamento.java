@@ -8,6 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 import java.awt.HeadlessException;
 import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pe.edu.upeu.farmacia.config.Conexion;
 
 
@@ -21,7 +23,13 @@ Conexion conectar=new Conexion();
     ResultSet r;
     public Medicamento() {
         initComponents();
-          con=conectar.conex();
+    try {
+        con=conectar.GetConexion();
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(Medicamento.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (SQLException ex) {
+        Logger.getLogger(Medicamento.class.getName()).log(Level.SEVERE, null, ex);
+    }
     cargar();
     try
 {

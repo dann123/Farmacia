@@ -17,24 +17,24 @@ import java.sql.SQLException;
  * @author HuBel
  */
 public class Conexion {
+    
      public static Connection GetConexion() throws ClassNotFoundException, SQLException{
-    Connection conex=null;
-        Class.forName("com.mysql.jdbc.Driver");
-        String url="jdbc:mysql://localhost/bd_farmacia";
+    Connection cn=null;
+        
+        String url="jdbc:mysql://localhost/db_farmaci";
         String usuario="root";
         String pass ="root";
-        conex =(Connection) DriverManager.getConnection(url,usuario,pass);    
-    return conex;
+         cn=DriverManager.getConnection("jdbc:sqlserver:");
+        cn =(Connection) DriverManager.getConnection(url,usuario,pass);    
+    return cn;
     }
 
-    public static Connection getConexion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+
+   
     
 
-    public Connection conex() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 

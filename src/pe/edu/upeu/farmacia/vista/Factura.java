@@ -3,6 +3,8 @@ package pe.edu.upeu.farmacia.vista;
 
 import java.sql.*;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.TableColumn;
 import pe.edu.upeu.farmacia.config.Conexion;
 
@@ -15,7 +17,11 @@ public final class Factura extends javax.swing.JInternalFrame {
    Conexion conectar=new Conexion();
     public Factura() throws SQLException {
         initComponents();
-       cn=conectar.conex();
+     try {
+         cn=conectar.GetConexion();
+     } catch (ClassNotFoundException ex) {
+         Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null, ex);
+     }
           Calendar cal=Calendar.getInstance();
     String fecha=cal.get(Calendar.DATE)+"/"+cal.get(Calendar.MONTH)+"/"+cal.get(cal.YEAR);
     this.jlbfecha.setText(fecha);

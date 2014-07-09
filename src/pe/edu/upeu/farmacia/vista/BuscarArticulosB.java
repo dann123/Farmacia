@@ -6,6 +6,8 @@ package pe.edu.upeu.farmacia.vista;
 
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.table.DefaultTableModel;
 import pe.edu.upeu.farmacia.config.Conexion;
@@ -22,7 +24,13 @@ public class BuscarArticulosB extends javax.swing.JInternalFrame {
    Conexion conectar= new Conexion();
     public BuscarArticulosB() {
         initComponents();
-      cn=conectar.conex();
+         try {
+             cn=conectar.GetConexion();
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(BuscarArticulosB.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (SQLException ex) {
+             Logger.getLogger(BuscarArticulosB.class.getName()).log(Level.SEVERE, null, ex);
+         }
         cargar();
      
     }

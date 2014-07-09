@@ -31,7 +31,13 @@ public class Cliente extends javax.swing.JPanel {
     public Cliente() {
         initComponents();    
     initComponents();
-          cn=(Conexion) conectar.conex();
+        try {
+            cn=(Conexion) conectar.GetConexion();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         cargar();   
         DESABILITAR();
         BOTONES();
